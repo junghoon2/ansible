@@ -1,5 +1,5 @@
 - name: install pkgs
-  hosts: cent8
+  hosts: cent7
   become: yes
 
   tasks:
