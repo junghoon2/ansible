@@ -1,0 +1,8 @@
+---
+- hosts: cent8
+  tasks:
+  - name: copy remote files
+    fetch:
+      src: /tmp/errorfile
+      dest: /tmp
+    ignore_errors: yes

@@ -1,0 +1,14 @@
+- hosts: marias
+  tasks:
+  - name: create a file
+    file:
+      path: /tmp/testfile
+      state: touch
+    register: output
+  
+  - debug: msg="Register output is {{ output }}"
+
+  - name: edit file
+    lineinfile:
+      path: /tmp/testfile
+      line: "The Uid is {{ output.uid}} and Gid is {{ output.gid }}"

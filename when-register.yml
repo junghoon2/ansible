@@ -1,0 +1,12 @@
+- hosts: marias
+  become: yes
+  tasks:
+  - name: Check for archive file
+    command: ls /root/archive.tar
+    register: result
+    ignore_errors: yes
+
+  - file:
+      path: /root/archive.tar
+      state: touch
+    when: result is failed

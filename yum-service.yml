@@ -1,0 +1,15 @@
+---
+- hosts: webserver
+  become: yes
+  tasks:
+  - name: Install httpd
+    yum:
+# yum 아래에 -, list 기호 사용하지 않는다. 
+      name: httpd
+      state: present
+
+  - name: Server start and enabled
+    service:
+      name: httpd
+      state: started
+      enabled: yes 

@@ -1,0 +1,1 @@
+ansible dias -u diamanti -a "ntpstat"

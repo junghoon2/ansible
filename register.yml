@@ -1,0 +1,10 @@
+- hosts: marias
+  tasks:
+  - name: create a file
+    file:
+      path: /tmp/testfile
+      state: touch
+    register: output
+  
+  - debug: 
+      var: output.uid

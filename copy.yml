@@ -1,0 +1,10 @@
+- hosts: dias
+  become: yes
+  user: diamanti
+  tasks:
+  - copy:
+      src: /mnt/c/Users/erdia/Downloads/diamanti-upgrade-rpms-2.4.0-60.tgz
+      dest: /home/diamanti
+      # owner: dba
+      # group: dba
+      mode: 0774

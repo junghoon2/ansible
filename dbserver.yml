@@ -1,0 +1,18 @@
+---
+- hosts: dbserver
+  become: yes
+
+  tasks:
+  - name: Create dba user
+    user:
+      name: dba
+
+  - name: Copy /root/DBAstuff.txt to home directory
+    copy:
+      src: /tmp/name.csv
+      # directory 로 dest 로 하면 src 파일과 동일한 이름의 파일이 생긴다. 
+      dest: /home/dba
+      # User 대신 owner 사용
+      owner: dba
+      group: dba
+      mode: 0600

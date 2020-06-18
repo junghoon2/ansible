@@ -1,0 +1,10 @@
+- hosts: dia01
+  become: yes
+  user: diamanti
+  tasks:
+  - name: Load local image
+    docker_image:
+        name: haproxy
+        source: load
+        load_path: /tmp/haproxy.tar
+        state: present

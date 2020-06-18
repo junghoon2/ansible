@@ -1,0 +1,12 @@
+- hosts: maria01
+  tasks:
+  - name: get file
+    block:
+    - get_url: 
+        # url: "http://maria01/index.html"
+        url: "http://maria01"
+        dest: "/tmp/index_file"
+    rescue:
+    - debug: msg="The file doesn't exist"
+    always:
+    - debug: msg="Play done"

@@ -1,0 +1,7 @@
+- hosts: dia01
+  become: yes
+  user: diamanti
+  tasks:
+  - name: image info
+    docker_image_info:
+        name: haproxy

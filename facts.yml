@@ -1,0 +1,12 @@
+- name: Facts test
+# 2개 host group 사용 가능 
+  hosts: marias:cent8
+  become: yes
+
+  tasks:
+  - name: Insert ip address to file
+    lineinfile:
+      path: /home/spkr/ipaddress
+      create: yes
+      # 변수를 사용하려면 {{ }} 사용
+      line: "{{ ansible_all_ipv4_addresses }}"

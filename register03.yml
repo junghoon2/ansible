@@ -1,0 +1,15 @@
+- hosts: maria02
+  become: yes
+  tasks:
+  - name: Restart httpd service
+    service:
+      name: httpd
+      state: restarted
+    register: output
+  
+  - debug: msg="Register output is {{ output }}"
+
+  - name: edit file
+    lineinfile:
+      path: /tmp/testfile
+      line: "The Names is {{ output.status.Names}} and Mounts is {{ output.status.ActiveEnterTimestamp}}"

@@ -1,0 +1,13 @@
+- name: install pkgs
+  hosts: cent8
+  become: yes
+
+  tasks:
+  - yum:
+      name: "{{ item }}"
+      state: present 
+    loop:
+    - httpd
+    - git
+    - tcpdump
+    - php

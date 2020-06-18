@@ -1,0 +1,8 @@
+---
+- hosts: dbserver
+  become: yes
+  tasks:
+  - name: Create dba user
+    user:
+      name: dba
+      

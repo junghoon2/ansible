@@ -1,0 +1,9 @@
+- name: This playbook will remove tcpdump (if installed) from servers without admin in their hostnames
+  hosts: marias
+  become: yes
+  tasks:
+   - name: Remove tcpdump from all but '01' servers
+     yum:
+      name: tcpdump
+      state: absent
+     when: " '01' not in inventory_hostname "
