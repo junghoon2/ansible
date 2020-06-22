@@ -1,8 +1,0 @@
-- hosts: webserver
-  become: yes
-  tasks:
-  - file:
-      path: /home/diamanti/diamanti-upgrade-rpms-2.4.0-60.tgz
-      mode: "0755"
-      user: diamanti
-      group: diamanti

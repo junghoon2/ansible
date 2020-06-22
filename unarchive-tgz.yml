@@ -1,9 +1,0 @@
----
-- hosts: dias
-  become: true
-  tasks:
-  - unarchive:
-      src: /home/diamanti/diamanti-upgrade-rpms-2.4.0-60.tgz
-      dest: /home/diamanti
-      remote_src: yes
-    

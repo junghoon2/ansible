@@ -1,6 +1,0 @@
-- hosts: cent8
-  become: yes
-  tasks:
-  - git:
-      repo: https://github.com/ansible/ansible.git 
-      dest: /opt
