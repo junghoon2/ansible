@@ -1,0 +1,10 @@
+- name: install yum repository
+  hosts: cent8
+  become: yes
+
+  tasks:
+  - yum_repository:
+      name: epel
+      description: EPEL YUM repository
+      baseurl: https://dl.fedoraproject.org/pub/epel/epel-release-lastest-8.noarch.rpm
+      gpgcheck: no

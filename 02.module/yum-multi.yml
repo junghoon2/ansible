@@ -1,0 +1,12 @@
+- name: install pkgs
+  hosts: cent8
+  become: yes
+
+  tasks:
+  - yum:
+      name:
+      - httpd
+      - git
+      - tcpdump
+      - php
+      state: latest 

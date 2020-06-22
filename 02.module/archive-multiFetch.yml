@@ -1,0 +1,15 @@
+---
+- hosts: marias
+  become: true
+  tasks:
+  - archive:
+      path: /var/log/messages
+      dest: /var/log/msg.tgz
+  
+  - fetch:
+      src: /var/log/msg.tgz
+      dest: /tmp/msg-{{ inventory_hostname}}
+      flat: yes
+    #   dest: /tmp/msg
+    #   flat: no
+    

@@ -1,0 +1,9 @@
+- name: install yum repository
+  hosts: cent8
+  become: yes
+
+  tasks:
+  - yum_repository:
+      name: epel
+      file: epel
+      state: absent
