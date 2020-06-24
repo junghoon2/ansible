@@ -1,8 +1,9 @@
-- hosts: webserver
-  become: yes
+- hosts: dias
+  gather_facts: no
   tasks:
   - file:
-      path: /home/diamanti/diamanti-upgrade-rpms-2.4.0-60.tgz
+      path: /tmp/ansible-test
+      state: touch
       mode: "0755"
       user: diamanti
       group: diamanti
