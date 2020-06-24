@@ -1,6 +1,6 @@
-- hosts: webserver
+- hosts: cent8:cent7  # 2대 host 사용하는 방법은?
   become: yes
   tasks:
   - file:
-      path: /var/www/html/index.html
+      path: /var/www/html/index.html  # 경로가 없는 경우에는 디렉토리 만든다?
       state: touch

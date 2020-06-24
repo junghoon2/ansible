@@ -1,0 +1,15 @@
+- hosts: cent8
+  become: yes
+  tasks:
+  - name: Start and enable the httpd service
+    systemd:
+      name: httpd
+      state: restarted
+      enabled: yes
+  
+  - name: start and enable the firewalld service
+    systemd:
+      name: firewalld
+      state: reloaded
+      enabled: yes
+  

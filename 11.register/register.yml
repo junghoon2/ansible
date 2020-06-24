@@ -1,0 +1,9 @@
+- hosts: cent8
+  tasks:
+  - name: cat /etc/hosts
+    shell: cat /etc/hosts
+    register: result  # shell 실행 결과를 result 변수로 저장한다.
+
+  - debug:
+      #var: result.stdout  # register와 동일하게 맞춘다. result grep해서 특정 조건 확인 가능.
+      var: result.rc

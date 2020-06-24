@@ -1,0 +1,7 @@
+- hosts: cent8
+  become: yes
+
+  tasks:
+  - copy:
+      content: added by copy module
+      dest: /var/www/html/index.html

@@ -1,0 +1,9 @@
+- hosts: cent8
+  become: yes
+  vars:
+    dns_server: 8.8.4.4
+  tasks:
+    - nsupdate:
+        server: "{{ dns_server }}"
+        record: " ansible "
+  

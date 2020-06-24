@@ -1,0 +1,9 @@
+- hosts: cent8
+  become: yes
+
+  tasks:
+  - name: replace line with replace module
+    replace:
+      path:  /var/www/html/index.html
+      regexp: "module$"
+      replace: "ansible module"
