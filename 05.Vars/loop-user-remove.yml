@@ -1,0 +1,12 @@
+---
+- hosts: cent8
+  become: yes
+  vars_files:
+    - /etc/ansible/vars/user.yml
+  tasks:
+    - name: Delete user
+      user:
+        name: "{{ item }}"
+        state: absent
+        remove: yes
+      loop: "{{ [students, faculty]|flatten(1) }}"

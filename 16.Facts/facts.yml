@@ -1,0 +1,6 @@
+- hosts: dia01
+  tasks:
+    - debug:
+      #var: ansible_facts.processor  
+        var: ansible_facts.interfaces
+      #var: ansible_facts.virtualization_type

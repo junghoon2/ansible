@@ -1,0 +1,12 @@
+- hosts: dias
+  become: yes
+  vars:
+    nameserver: '8.8.8.8'
+
+  tasks:
+    - name: Copy resolv.conf.j2 to /etc/resolv.conf
+      template:
+        src: /home/spkr/01.Ansible/06.template/resolv.conf.j2
+        dest: /etc/resolv.conf
+        mode: 0644    # 644 하면 안되고 0644 해야 한다.
+    

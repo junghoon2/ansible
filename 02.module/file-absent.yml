@@ -1,0 +1,6 @@
+- hosts: dias
+  become: yes
+  tasks:
+  - file:
+      path: /etc/sysconfig/network-scripts/ifcfg-eno1.01
+      state: absent

@@ -1,0 +1,6 @@
+- hosts: dias
+  become: yes
+  tasks:
+    - name: Change hostname
+      hostname:
+        name: "{{ ansible_hostname }}"

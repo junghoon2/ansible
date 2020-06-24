@@ -1,0 +1,11 @@
+- hosts: dias
+  become: yes
+  # list 형태로 ip, hostname 가져오는 방법은? 
+  
+  tasks:
+    - name: Copy etchosts.j2 to /etc/hosts
+      template:
+        src: /home/spkr/01.Ansible/06.template/etchosts.j2
+        dest: /etc/hosts
+    #    mode: 0644    # 644 하면 안되고 0644 해야 한다.
+    

@@ -1,0 +1,13 @@
+- hosts: cent8
+  become: yes
+  vars_files:
+    - /etc/ansible/vars/user.yml
+  tasks:  
+  - name: Create user
+    user:
+      name: "{{ item }}"
+      state: present  
+    with_items:
+      - "{{ students }}"
+      - "{{ faculty }}"
+    

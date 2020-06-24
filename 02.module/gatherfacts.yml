@@ -1,0 +1,9 @@
+- hosts: dias
+  gather_facts: no
+  tasks:
+  - file:
+      path: /tmp/ansible-test
+      state: touch
+      mode: "0755"
+      # user: diamanti
+      # group: diamanti
