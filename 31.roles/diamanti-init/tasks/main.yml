@@ -1,0 +1,10 @@
+---
+# tasks file for diamanti-init
+
+#- include_tasks: "hostname.yml"
+- include_tasks: "ipmiSetIP.yml"
+#- include_tasks: "nameserver.yml"
+#- include_tasks: "etchosts.yml"
+#- include_tasks: "ntp.yml"
+#- include_tasks: "dia_node_validate.yml"
+#- include_tasks: "reboot.yml"

@@ -1,0 +1,5 @@
+---
+- hosts: dias
+  become: yes
+  roles:
+    - diamanti-init

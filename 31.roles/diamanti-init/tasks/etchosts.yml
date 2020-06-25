@@ -1,0 +1,19 @@
+- name: Copy etchosts to /etc/hosts
+  template:
+    src: etchosts.j2
+    dest: /etc/hosts
+    owner: root
+    group: root
+    mode: 0644
+
+- command: "cat /etc/hosts"
+  register: result
+
+- debug:
+    var: result.stdout
+
+- command: "ping -c 1 dia03"
+  register: result
+
+- debug:
+    var: result.stdout

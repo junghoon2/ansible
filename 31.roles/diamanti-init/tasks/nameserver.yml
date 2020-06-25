@@ -1,0 +1,12 @@
+- name: Copy resolv.conf.j2 to /etc/resolv.conf
+  template:
+    src: resolv.conf.j2
+    dest: /etc/resolv.conf
+    mode: 0644    # 644 하면 안되고 0644 해야 한다.
+
+- name: Check dns and connection to outside
+  command: "ping -c 1 www.google.com"
+  register: result
+
+- debug:
+    var: result.stdout

@@ -1,0 +1,14 @@
+---
+# defaults file for diamanti-init
+nameserver: 
+  ns01: 8.8.4.4
+  ns02: 1.1.1.1
+
+ntpserver:
+  ntp01: pool.ntp.org
+  ntp02: 0.pool.ntp.org
+  ntp03: 1.pool.ntp.org
+  ntp04: 2.pool.ntp.org
+  ntp05: 3.pool.ntp.org
+
+timezone: Asia/Seoul

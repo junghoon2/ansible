@@ -1,0 +1,41 @@
+# Set ntp.conf, sync ntpdate, restart ntpd, check status
+- name: copy ntp.conf.j2 /etc/ntp.conf
+  template:
+    src: ntp.conf.j2
+    dest: /etc/ntp.conf 
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Sync local clock manually
+  command: "ntpdate {{ntpserver.ntp01}}"
+  ignore_errors: yes
+
+- name: Set timezone
+  timezone:
+    name: "{{ timezone }}"
+
+- name: Restart ntpd service
+  service:
+    name: ntpd
+    state: restarted
+    enabled: yes
+
+- name: Sleep 10s
+  pause:
+    seconds: 10
+
+- name: Check timedatectl status
+  command: "timedatectl"
+  register: result
+
+- debug:
+    var: result.stdout
+
+- name: Check ntp status
+  command: "ntpstat"
+  register: result
+
+- debug:
+    var: result.stdout
+  
