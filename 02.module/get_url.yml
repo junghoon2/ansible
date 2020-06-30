@@ -1,0 +1,10 @@
+- hosts: cent8
+  # gather_facts: no
+  tasks:
+  - name: Download foo.conf
+    get_url:
+      # url: http://example.com/path/file.conf
+      url: http://www.google.com
+      # dest: /etc/foo.conf
+      dest: /home/spkr/google.html
+      mode: '0640'

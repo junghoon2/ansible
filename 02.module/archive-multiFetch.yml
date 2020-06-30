@@ -1,14 +1,15 @@
 ---
-- hosts: marias
+- hosts: cents
   become: true
   tasks:
-  - archive:
-      path: /var/log/messages
+  - name: Compress directory /path/to/foo/ into /path/to/foo.tgz
+    archive:
+      path: /var/log/messages/
       dest: /var/log/msg.tgz
-  
+
   - fetch:
       src: /var/log/msg.tgz
-      dest: /tmp/msg-{{ inventory_hostname}}
+      dest: /tmp/msg-{{ inventory_hostname}}.tgz
       flat: yes
     #   dest: /tmp/msg
     #   flat: no
