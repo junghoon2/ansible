@@ -4,7 +4,7 @@
   tasks:
   - name: Create multiple users
     user:
-      name: {{ item }}
+      name: "{{ item }}"
     loop:
       - test01
       - test02

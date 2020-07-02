@@ -1,0 +1,8 @@
+---
+- hosts: cent8
+  become: yes
+  tasks:
+  - name: Assign group
+    user:
+      name: test05
+      group: consultant

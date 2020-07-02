@@ -1,6 +1,6 @@
-- hosts: dias
+- hosts: a_dzdias
   become: yes
   gather_facts: no
   tasks:
-  - name: Unconditionally reboot the machine with all defaults
+  - name:  Reboot the machine with all defaults
     reboot:

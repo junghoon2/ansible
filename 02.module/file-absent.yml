@@ -1,6 +1,10 @@
-- hosts: dias
+- hosts: cent8
   become: yes
   tasks:
+  # - file:
+  #     path: /etc/sysconfig/network-scripts/ifcfg-eno1.01
+  #     state: absent
   - file:
-      path: /etc/sysconfig/network-scripts/ifcfg-eno1.01
+      path: /var/www
       state: absent
+  

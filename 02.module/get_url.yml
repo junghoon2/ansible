@@ -1,10 +1,10 @@
-- hosts: cent8
+- hosts: cent7  
   # gather_facts: no
   tasks:
-  - name: Download foo.conf
+  - name: Download test file
     get_url:
       # url: http://example.com/path/file.conf
-      url: http://www.google.com
+      url: http://www.naver.com
       # dest: /etc/foo.conf
-      dest: /home/spkr/google.html
+      dest: /home/spkr/naver.html
       mode: '0640'

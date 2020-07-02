@@ -7,6 +7,12 @@
     group: root
     mode: 0644
 
+- name: Stop ntpd service
+  service:
+    name: ntpd
+    state: stopped
+    enabled: yes
+
 - name: Sync local clock manually
   command: "ntpdate {{ntpserver.ntp01}}"
   ignore_errors: yes
@@ -15,10 +21,10 @@
   timezone:
     name: "{{ timezone }}"
 
-- name: Restart ntpd service
+- name: Start ntpd service
   service:
     name: ntpd
-    state: restarted
+    state: started
     enabled: yes
 
 - name: Sleep 10s

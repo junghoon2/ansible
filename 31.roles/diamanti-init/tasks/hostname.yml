@@ -1,9 +1,9 @@
 ---
 # tasks file for diamanti-init
 
-- name: Set hostname
-  hostname:
-    name: "{{ ansible_hostname }}"
+# - name: Set hostname
+#   hostname:
+#     name: "{{ ansible_hostname }}"
 
 - name: Cat hostname
   command: hostname
@@ -11,4 +11,3 @@
 
 - debug:
     var: result.stdout
-

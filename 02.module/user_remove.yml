@@ -8,7 +8,7 @@
       user:
         name: "{{ item }}"
         state: absent
-        remove: yes
+        remove: yes  # remove yes 해야 home directory까지 같이 삭제한다.
       with_items:
         - "{{ students }}"
         - "{{ faculty }}"

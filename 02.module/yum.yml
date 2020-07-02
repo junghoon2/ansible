@@ -1,13 +1,8 @@
-- name: install pkgs
-  hosts: cent7
+- hosts: adzdias
   become: yes
 
   tasks:
-  - yum:
-      name: "{{ item }}"
+  - name: Install nfs-utils
+    yum:
+      name: "nfs-utils"
       state: present 
-    loop:
-    - httpd
-    - git
-    - tcpdump
-    - php
