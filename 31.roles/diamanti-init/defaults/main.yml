@@ -11,3 +11,5 @@ ntpserver:
   ntp03: 1.pool.ntp.org
 
 timezone: Asia/Seoul
+
+peers: adzdia03

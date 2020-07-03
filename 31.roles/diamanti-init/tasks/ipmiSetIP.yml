@@ -1,16 +1,16 @@
 - name: Set IPMI IP static
-  command: "ipmitool lan set 3 ipsrc static"
+  command: "ipmitool lan set 1 ipsrc static"
 
 - name: Set netmask
-  command: "ipmitool lan set 3 netmask 255.255.255.0"
+  command: "ipmitool lan set 1 netmask 255.255.255.0"
 - name: Set default gateway
-  command: "ipmitool lan set 3 defgw ipaddr 10.82.11.1"
+  command: "ipmitool lan set 1 defgw ipaddr 10.82.11.1"
 
 - name: Set IPMI IP addr
-  command: "ipmitool lan set 3 ipaddr {{ipmi_ip}} "
+  command: "ipmitool lan set 1 ipaddr {{ ipmi_ip }} "
 
 - name: Print IPMI ip addr
-  command: "ipmitool lan print 3"
+  command: "ipmitool lan print 1"
   register: result
 
 - debug:

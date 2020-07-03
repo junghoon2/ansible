@@ -1,6 +1,13 @@
-- hosts: dias
+- hosts: cents
   become: yes
   tasks:
-    - name: Change hostname
+    - name: Change hostname from inventory hostname
       hostname:
-        name: "{{ ansible_hostname }}"
+        name: "{{ inventory_hostname }}"
+
+    - name: Cat hostname
+      command: hostname
+      register: result
+    
+    - debug:
+        var: result.stdout

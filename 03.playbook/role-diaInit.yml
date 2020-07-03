@@ -1,5 +1,5 @@
 ---
-- hosts: a_dzdias
+- hosts: adzdias
   become: yes
   roles:
     - diamanti-init

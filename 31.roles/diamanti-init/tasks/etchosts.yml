@@ -12,7 +12,7 @@
 - debug:
     var: result.stdout
 
-- command: "ping -c 1 a_dzdia03"
+- command: "ping -c 1 {{ peer }}"
   register: result
 
 - debug:
