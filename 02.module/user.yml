@@ -4,9 +4,14 @@
   tasks:
   - name: Create multiple users
     user:
-      name: {{ item }}
+      name: "{{ item }}"
     loop:
       - test01
       - test02
       - test03
-      
+      - test04
+      - test05
+      - test06
+      - test07
+      - test08
+      - test09

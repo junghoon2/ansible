@@ -1,0 +1,29 @@
+- hosts: dia01
+  become: yes
+  tasks:
+  - name: Insert ip address to file with lineinfile
+    lineinfile:
+      path:  "{{ item }}"
+      line: "alias kc=kubectl"
+    loop:
+    - /home/test03/.bashrc
+    - /home/test04/.bashrc
+    - /home/test05/.bashrc
+    - /home/test06/.bashrc
+    - /home/test07/.bashrc
+    - /home/test08/.bashrc
+    - /home/test09/.bashrc
+    
+  - name: Insert ip address to file with lineinfile
+    lineinfile:
+      path:  "{{ item }}"
+      line: "complete -F __start_kubectl kc"
+    loop:
+      - /home/test03/.bashrc
+      - /home/test04/.bashrc
+      - /home/test05/.bashrc
+      - /home/test06/.bashrc
+      - /home/test07/.bashrc
+      - /home/test08/.bashrc
+      - /home/test09/.bashrc
+    
