@@ -1,8 +1,11 @@
-- hosts: adzdias
+- hosts: cents
   become: yes
 
   tasks:
-  - name: Install nfs-utils
+  - name: Install docker docker SDK
     yum:
-      name: "nfs-utils"
-      state: present 
+      name: "{{ item }}"
+      state: present
+    loop:
+    - docker
+    - python-docker-py 

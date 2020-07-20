@@ -1,0 +1,16 @@
+---
+  - hosts: cent701
+    gather_facts: no
+    become: yes
+    tasks:
+      - name: archive container image as a tarball
+        docker_image:
+          name: democontainer:v1.0
+          archive_path: /home/spkr/democontainer_v1_0.tar
+          source: pull
+          state: present
+      - name: fetch archived image
+        fetch:
+          src: /home/spkr/democontainer_v1_0.tar
+          dest: /home/spkr/democontainer_v1_0.tar
+          flat: true
