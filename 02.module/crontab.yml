@@ -1,0 +1,10 @@
+- hosts: adzdias
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: Clear buffer cache
+    cron:
+      name: "clear buffer cache"
+      minute: "0"
+      hour: "4"
+      job: "/usr/bin/sync && /bin/echo 3 > /proc/sys/vm/drop_caches"
