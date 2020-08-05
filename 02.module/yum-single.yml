@@ -1,0 +1,7 @@
+- hosts: adzdias
+  become: yes
+  tasks:
+  - name: Install pip pkg
+    yum:
+      name: python-pip
+      state: present

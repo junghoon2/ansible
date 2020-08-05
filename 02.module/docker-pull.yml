@@ -1,0 +1,10 @@
+- hosts: adzdias
+  become: yes
+  user: diamanti
+  tasks:
+  - name: pull an image
+    docker_image:
+      name: "{{ item }}"
+      source: pull
+    loop:
+    - nkkim/mariadb-ssh:10.3.14

@@ -1,6 +1,5 @@
 - hosts: cents
   become: yes
-
   tasks:
   - name: Install docker docker SDK
     yum:

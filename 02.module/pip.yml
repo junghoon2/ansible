@@ -1,0 +1,6 @@
+- hosts: adzdias
+  become: yes
+  user: diamanti
+  tasks:
+  - pip:
+      name: docker
