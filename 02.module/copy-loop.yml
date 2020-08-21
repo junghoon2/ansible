@@ -1,0 +1,14 @@
+- hosts: adzdias
+  # become: yes
+  # gather_facts: no
+  tasks:
+  - name: copy local configuration files to remote 
+    copy:
+      src: "{{ item }}"
+      dest: /etc/diamanti/prometheus
+      backup: yes
+    loop:
+    - /home/spkr/02.k8s/diamanti-k8s-bootcamp/29.Prometheus/alert.rules
+    - /home/spkr/02.k8s/diamanti-k8s-bootcamp/29.Prometheus/alertmanager.yml
+      # owner: dba
+      # group: dba
