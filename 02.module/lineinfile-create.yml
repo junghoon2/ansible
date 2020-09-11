@@ -1,11 +1,10 @@
 - hosts: cent8
   become: yes
-
   tasks:
   - name: Insert ip address to file with lineinfile
     lineinfile:
       path:  /var/www/html/index.html  # file이 없으면 만든다.
-      create: yes
-      # 변수를 사용하려면 {{ }} 사용
-      line: "{{ ansible_default_ipv4.address }}"
+      # create: yes
+      # # 변수를 사용하려면 {{ }} 사용
+      line: "vm.max_map_count = 262144"
   

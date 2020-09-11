@@ -17,6 +17,10 @@
   command: "ntpdate {{ntpserver.ntp01}}"
   ignore_errors: yes
 
+- name: Sleep 10s
+  pause:
+    seconds: "10"
+
 - name: Set timezone
   timezone:
     name: "{{ timezone }}"
@@ -29,7 +33,7 @@
 
 - name: Sleep 10s
   pause:
-    seconds: 10
+    seconds: "10"
 
 - name: Check timedatectl status
   command: "timedatectl"

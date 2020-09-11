@@ -1,5 +1,4 @@
 - name: install autocompletion pkgs
-  tasks:
-  - yum:
-      name: bash-completion
-      state: present 
+  yum:
+    name: "bash-completion"
+    state: present 

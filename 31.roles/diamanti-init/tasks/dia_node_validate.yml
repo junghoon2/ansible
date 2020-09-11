@@ -1,5 +1,5 @@
 - name: Check diamanti node readiness status
-  command: "validate_nodecfg.sh"
+  command: "/usr/local/bin/validate_nodecfg.sh"
   register: result
 
 - debug:

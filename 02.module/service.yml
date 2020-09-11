@@ -1,15 +1,18 @@
-- hosts: cent8
+- hosts: dzdias
   become: yes
   tasks:
   - name: Start and enable the httpd service
     service:
-      name: httpd
+      name: {{ item }}
       state: started
       enabled: yes
-  
-  - name: start and enable the firewalld service
-    service:
-      name: firewalld
-      state: started
-      enabled: yes
+    loop:
+    - armada
+    - dock 
+    - bosun
+  # - name: start and enable the firewalld service
+  #   service:
+  #     name: firewalld
+  #     state: started
+  #     enabled: yes
   

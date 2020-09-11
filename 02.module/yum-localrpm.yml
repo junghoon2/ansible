@@ -1,18 +1,16 @@
-- hosts: a_dzdias
+- hosts: dzdias
   become: yes
   tasks:
   - name: install local rpm files
     yum:
       name: "{{ item }} " 
       state: present 
+      # state: latest 
     loop:
-      - /home/diamanti/diamanti-upgrade-rpms-2.4.0-60/diamanti_centos7.4_update6-7.6.0-19.1.x86_64.rpm
-      - /home/diamanti/diamanti-upgrade-rpms-2.4.0-60/diamanti_centos7.4_update8-7.6.0-21.1.x86_64.rpm
-      - /home/diamanti/diamanti-upgrade-rpms-2.4.0-60/diamanti_centos7.6_update2-7.6.0-24.1.x86_64.rpm
-      - /home/diamanti/diamanti-upgrade-rpms-2.4.0-60/diamanti-cx-docker-core-2.4.0-60.x86_64.rpm
-      # - /home/diamanti/diamanti-upgrade-rpms-2.4.0-60/diamanti-cx-patch1-2.3.1-1.x86_64.rpm
-      # - /home/diamanti/diamanti-upgrade-rpms-2.4.0-60/diamanti-cx-patch2-2.2.2-1.x86_64.rpm
-      # - /home/diamanti/diamanti-upgrade-rpms-2.4.0-60/diamanti-cx-patch2-2.3.1-1.x86_64.rpm
-      # - /home/diamanti/diamanti-upgrade-rpms-2.4.0-60/diamanti-cx-patch5-2.2.0-1.x86_64.rpm
-      # - /home/diamanti/diamanti-upgrade-rpms-2.4.0-60/diamanti-cx-patch5-2.3.0-1.x86_64.rpm
-      - /home/diamanti/diamanti-upgrade-rpms-2.4.0-60/diamanti-sdr-patch-1.0.0-1.x86_64.rpm
+    # - /home/diamanti/diamanti-mc-docker-core-3.0.0-162.x86_64.rpm
+    # - /home/diamanti/diamanti-cx-docker-core-3.0.0-162.x86_64.rpm
+    # - /home/diamanti/diamanti-cx-3.0.0-162.x86_64.rpm
+    - /home/diamanti/diamanti_centos7.6_update2-7.6.0-24.1.x86_64.rpm
+    - /home/diamanti/diamanti-cx-2.4.1-108.x86_64.rpm
+    - /home/diamanti/diamanti-cx-docker-core-2.4.1-108.x86_64.rpm
+    - /home/diamanti/diamanti-sdr-patch-1.0.0-1.x86_64.rpm
