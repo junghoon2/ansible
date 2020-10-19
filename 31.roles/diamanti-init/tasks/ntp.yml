@@ -13,6 +13,10 @@
     state: stopped
     enabled: yes
 
+- name: Sleep 10s
+  pause:
+    seconds: "10"
+    
 - name: Sync local clock manually
   command: "ntpdate {{ntpserver.ntp01}}"
   ignore_errors: yes

@@ -1,0 +1,15 @@
+- hosts: dzdias
+  become: yes
+  tasks:
+    - name: Add vm.max_map_count
+      lineinfile:
+        path:  /etc/sysctl.conf
+        line: "vm.max_map_count=262144"    # line 추가
+
+    - name: allow max number of opened files
+      lineinfile:
+        path:  /etc/security/limits.conf
+        line: "{{ item }}"
+      loop:
+      - "elasticsearch soft memlock unlimited"    # line 추가
+      - "elasticsearch hard memlock unlimited"

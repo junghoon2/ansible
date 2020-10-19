@@ -6,6 +6,7 @@
 # - include_tasks: "nameserver.yml"
 # - include_tasks: "etchosts.yml"
 - include_tasks: "ntp.yml"
+- include_tasks: "user-password.yml"
 # - include_tasks: "yum-completion.yml"
 - include_tasks: "dia_node_validate.yml"
 - include_tasks: "reboot.yml"

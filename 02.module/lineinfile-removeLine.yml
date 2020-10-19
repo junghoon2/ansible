@@ -1,0 +1,8 @@
+- hosts: dzdias
+  become: yes
+  tasks:
+    - name: Remove lines
+      lineinfile:
+        path:  /etc/security/limits.conf
+        state: absent
+        regexp: "elasticsearch soft memlock unlimited"

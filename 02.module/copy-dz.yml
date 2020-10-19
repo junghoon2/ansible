@@ -1,0 +1,17 @@
+- hosts: adzdias
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: copy rules to remote
+    copy:
+      src: /home/spkr/12.Privatek8sCode/29.Prometheus/alertmanager-dz.yml
+      dest: /etc/diamanti/prometheus/alertmanager.yml
+      backup: yes
+      # owner: dba
+      # group: dba
+
+  - name: copy rules to remote
+    copy:
+      src: /home/spkr/12.Privatek8sCode/29.Prometheus/alertmanager-dz-sts.yml
+      dest: /etc/diamanti/prometheus/alertmanager-sts.yml
+      backup: yes
