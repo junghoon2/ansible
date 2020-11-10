@@ -1,0 +1,220 @@
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-board.dockerfile
+      line: "{{ item }}"
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-bp.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-crm.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-ea.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-eap.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-event.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-fax.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-financial.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-human.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-keep.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-kiss.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-ladder.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-logis.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-mail.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-mailBox.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-messenger.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-nonProfit.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-personal.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-proxyMgw.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-proxyPush.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-sms.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-system.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-UsageStatisticChartUI.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+  - name: Add dockerfile
+    lineinfile:
+      path:  /home/spkr/02.k8s/diamanti-k8s-bootcamp/43.Dockerfile/tomcat/tomcat-webauthn.dockerfile
+      line: "{{ item }}" 
+    loop:
+    - 'WORKDIR /usr/local/tomcat'
+    - 'EXPOSE 8080'
+    - 'CMD ["./bin/catalina.sh", "run"]'
+
+

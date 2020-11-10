@@ -4,8 +4,8 @@
   tasks:
   - name: copy rules to remote
     copy:
-      src: /home/spkr/02.k8s/diamanti-k8s-bootcamp/29.Prometheus/alert.rules
-      dest: /etc/diamanti/prometheus/alert.rules
+      src: /home/spkr/12.Privatek8sCode/29.Prometheus/prometheus.yml
+      dest: /etc/diamanti/prometheus/prometheus.yml
       backup: yes
       # owner: dba
       # group: dba
