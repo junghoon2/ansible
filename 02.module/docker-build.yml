@@ -1,13 +1,25 @@
 - hosts: localhost
-  become: yes
+  # become: yes
+  gather_facts: no
   tasks:
+  # - name: Build an image and push it to a private repo
+  #   community.general.docker_image:
+  #     build:
+  #       # path: /mnt/c/Users/erdia/Documents/07.Customers/01.Douzone
+  #       path: /mnt/c/Users/erdia/Documents/07.Customers/01.Douzone/02.dockerfile/tomcat-apiproxy.dockerfile
+  #       # dockerfile: tomcat-apiproxy.dockerfile
+  #     name: erdia22/tomcat-apiproxy
+  #     tag: 1.4
+  #     # push: yes
+  #     source: build
+
   - name: Build an image and push it to a private repo
-    community.general.docker_image:
-      build:
-        # path: /mnt/c/Users/erdia/Documents/07.Customers/01.Douzone
-        path: /mnt/c/Users/erdia/Documents/07.Customers
-        # dockerfile: tomcat-apiproxy.dockerfile
+    docker_image:
       name: erdia22/tomcat-apiproxy
-      tag: 1.0
+      tag: 1.4
       # push: yes
+      build:
+        path: /mnt/c/Users/erdia/Documents/07.Customers/01.Douzone/02.dockerfile
+        dockerfile: tomcat-apiproxy.dockerfile
       source: build
+      state: present

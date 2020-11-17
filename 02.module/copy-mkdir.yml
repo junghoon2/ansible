@@ -2,10 +2,15 @@
   become: yes
   gather_facts: no
   tasks:
+  - name: mkdir
+    file:
+      path: /etc/docker/certs.d/gitlab.spkr.io:5050
+      state: directory
+
   - name: copy rules to remote
     copy:
       src: /home/spkr/02.k8s/diamanti-k8s-bootcamp/47.GitLab/gitlab.spkr.io.crt
-      dest: /etc/docker/certs.d/gitlab.spkr.io/gitlab.spkr.io.crt
+      dest: /etc/docker/certs.d/gitlab.spkr.io:5050/gitlab.spkr.io.crt
       backup: yes
       # owner: dba
       # group: dba

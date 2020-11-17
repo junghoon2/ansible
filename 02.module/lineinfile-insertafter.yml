@@ -1,16 +1,21 @@
-- hosts: cent8
+- hosts: dias
   become: yes
-
   tasks:
+    # - name: replace line with replace module
+    #   lineinfile:
+    #     path:  /var/www/html/index.html
+    #     regexp: "^added"    # added로 시작하는 line 변경 
+    #     line: "line replaced by lineinfile module"    # line 전체를 변경한다.
+
+    # - name: Ensure the default Apache port is 8080
+    #   lineinfile:
+    #     path: /etc/httpd/conf/httpd.conf
+    #     regexp: '^Listen '
+    #     insertafter: '^#Listen '    # Listen 다음 line에 추가 
+    #     line: Listen 8080
+
     - name: replace line with replace module
       lineinfile:
         path:  /var/www/html/index.html
         regexp: "^added"    # added로 시작하는 line 변경 
         line: "line replaced by lineinfile module"    # line 전체를 변경한다.
-
-    - name: Ensure the default Apache port is 8080
-      lineinfile:
-        path: /etc/httpd/conf/httpd.conf
-        regexp: '^Listen '
-        insertafter: '^#Listen '    # Listen 다음 line에 추가 
-        line: Listen 8080

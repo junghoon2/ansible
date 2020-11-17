@@ -1,0 +1,23 @@
+# - hosts: adzdias
+- hosts: dzdia01
+  become: yes
+  # user: diamanti
+  tasks:
+  - name: tag & push an image
+    docker_image:
+      name: docker.io/erdia22/tomcat-mailbox
+      repository: gitlab.dz-ebp.io:5050/jerry/bizcubex/tomcat-mailbox
+      tag: 1.4
+      push: yes
+      source: local
+
+  # - name: tag & push an image
+  #   docker_image:
+  #     name: "{{ item.name01 }}"
+  #     repository: "{{ item.name02 }}"
+  #     push: yes
+  #     source: local
+  #   loop:
+  #   - { name01: 'erdia22/tomcat-apiproxy:1.4', name02: 'erdia22/tomcat-apiproxy:1.4'} 
+  #   - { name01: 'erdia22/tomcat-board:1.4', name02: 'erdia22/tomcat-board:1.4'} 
+  #   - { name01: 'erdia22/tomcat-crm:1.4', name02: 'erdia22/tomcat-crm:1.4'} 

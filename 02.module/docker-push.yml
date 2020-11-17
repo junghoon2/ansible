@@ -1,0 +1,15 @@
+# - hosts: adzdias
+- hosts: localhost
+  # become: yes
+  # user: diamanti
+  tasks:
+  - name: push an image
+    docker_image:
+      name: "{{ item.name01 }}"
+      repository: "{{ item.name02 }}"
+      push: yes
+      source: local
+    loop:
+    - { name01: 'erdia22/tomcat-apiproxy:1.4', name02: 'erdia22/tomcat-apiproxy:1.4'} 
+    - { name01: 'erdia22/tomcat-board:1.4', name02: 'erdia22/tomcat-board:1.4'} 
+    - { name01: 'erdia22/tomcat-crm:1.4', name02: 'erdia22/tomcat-crm:1.4'} 

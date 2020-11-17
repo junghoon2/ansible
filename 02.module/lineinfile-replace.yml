@@ -1,10 +1,10 @@
-- hosts: cent8
+- hosts: dias
   become: yes
 
   tasks:
     - name: replace line with replace module
       lineinfile:
-        path:  /var/www/html/index.html
-        regexp: "^172"    # 172로 시작하는 line 변경 
+        path:  /etc/hosts
+        regexp: "^10.10.100.37"    # 172로 시작하는 line 변경 
         # line: "{{ ansible_hostname }}"    # line 전체를 변경한다.
-        line: "{{ ansible_default_ipv4.address }}"
+        line: "10.10.130.17   gitlab.spkr.io"

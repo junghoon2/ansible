@@ -1,9 +1,15 @@
-- hosts: cent8
+- hosts: dzdias
   become: yes
   tasks:
   - file:
-      path: /var/www
-      group: spkr
-      mode: 0664
-      recurse: yes
+      path: /etc/docker/certs.d/gitlab.dz-ebp.io:5050
+      # group: spkr
+      # mode: 0664
+      # recurse: yes
       state: directory
+
+  - name: copy crt certificate
+    copy:
+      src: /home/spkr/gitlab.dz-ebp.io.crt
+      dest: /etc/docker/certs.d/gitlab.dz-ebp.io:5050/gitlab.dz-ebp.io.crt
+      backup: yes
