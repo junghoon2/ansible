@@ -1,4 +1,4 @@
-- hosts: adzdias
+- hosts: dzdias
   become: yes
   user: diamanti
   tasks:

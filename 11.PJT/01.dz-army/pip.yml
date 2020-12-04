@@ -1,0 +1,10 @@
+- hosts: dzarmys
+  become: yes
+  tasks:
+  - name: Install python-pip
+    yum:
+      name: python-pip
+      state: present
+
+  - pip:
+      name: docker

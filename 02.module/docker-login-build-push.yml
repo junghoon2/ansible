@@ -1,0 +1,74 @@
+- hosts: localhost
+  # become: yes
+  gather_facts: no
+  tasks:
+  # - name: Build an image and push it to a private repo
+  #   community.general.docker_image:
+  #     build:
+  #       # path: /mnt/c/Users/erdia/Documents/07.Customers/01.Douzone
+  #       path: /mnt/c/Users/erdia/Documents/07.Customers/01.Douzone/02.dockerfile/tomcat-apiproxy.dockerfile
+  #       # dockerfile: tomcat-apiproxy.dockerfile
+  #     name: erdia22/tomcat-apiproxy
+  #     tag: 1.4
+  #     # push: yes
+  #     source: build
+  # - name: Log into private registry and force re-authorization
+  #   docker_login:
+  #     registry: gitlab.dz-ebp.io:5050
+  #     username: jerry
+  #     password: Diamanti1! 
+
+  - name: local Build an image and push it to a private repo
+    docker_image:
+      build:
+        path: /home/spkr/06.dockerfile/
+        dockerfile: usage.dockerfile
+      name: gitlab.dz-ebp.io:5050/jerry/bizcubex/usage
+      tag: 1.6
+      push: yes
+      source: build
+      state: present
+
+  # - name: Build an image and push it to a private repo
+  #   docker_image:
+  #     build:
+  #       path: /home/diamanti/03.dockerfile
+  #       dockerfile: crawler.dockerfile
+  #     name: gitlab.dz-ebp.io:5050/jerry/bizcubex/crawler
+  #     tag: 1.7
+  #     push: yes
+  #     source: build
+  #     state: present
+
+  # - name: Build an image and push it to a private repo
+  #   docker_image:
+  #     build:
+  #       path: /home/diamanti/03.dockerfile
+  #       dockerfile: crawler-file.dockerfile
+  #     name: gitlab.dz-ebp.io:5050/jerry/bizcubex/crawler-file
+  #     tag: 1.6
+  #     push: yes
+  #     source: build
+  #     state: present
+
+  # - name: Build an image and push it to a private repo
+  #   docker_image:
+  #     build:
+  #       path: /home/diamanti/03.dockerfile
+  #       dockerfile: usage.dockerfile
+  #     name: gitlab.dz-ebp.io:5050/jerry/bizcubex/usage
+  #     tag: "1.5"
+  #     push: yes
+  #     source: build
+  #     state: present
+
+  # - name: Build an image and push it to a private repo
+  #   docker_image:
+  #     build:
+  #       path: /home/diamanti/03.dockerfile
+  #       dockerfile: tomcat-gw.dockerfile
+  #     name: gitlab.dz-ebp.io:5050/jerry/bizcubex/tomcat-gw
+  #     tag: "1.5"
+  #     push: yes
+  #     source: build
+  #     state: present

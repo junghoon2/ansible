@@ -1,0 +1,47 @@
+# - hosts: adzdias
+- hosts: dzdia02
+  become: yes
+  # user: diamanti
+  tasks:
+  # - name: tag & push an image
+  #   docker_image:
+  #     name: docker.io/erdia22/tomcat-mailbox
+  #     repository: gitlab.dz-ebp.io:5050/jerry/bizcubex/tomcat-mailbox
+  #     tag: 1.4
+  #     push: yes
+  #     source: local
+
+  - name: tag & push an image
+    docker_image:
+      name: docker.io/erdia22/tomcat-{{item}}
+      repository: gitlab.dz-ebp.io:5050/jerry/bizcubex/tomcat-{{item}}r
+      tag: 1.4
+      push: yes
+      source: local
+    loop:
+    # - human
+    # - financial
+    # - crm
+    # - messenger
+    # - event
+    # - eap
+    # - gw
+    # - mail
+    # - fax
+    # - board
+    # - apiproxy
+    # - proxymgw
+    # - webauthn
+    # - ladder
+    # - kiss
+    # - mailbox
+    # - usagestatisticchartui
+    # - sms
+    # - personal
+    # - logis
+    # - ea
+    # - proxypush
+    # - keep
+    - ecm-convert
+
+

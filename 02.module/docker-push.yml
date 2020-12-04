@@ -1,15 +1,25 @@
 # - hosts: adzdias
-- hosts: localhost
-  # become: yes
+- hosts: dzdia01
+  become: yes
   # user: diamanti
   tasks:
+  # - name: push an image
+  #   docker_image:
+  #     name: "{{ item.name01 }}"
+  #     repository: "{{ item.name02 }}"
+  #     push: yes
+  #     source: local
+  #   loop:
+  #   - { name01: 'erdia22/tomcat-apiproxy:1.4', name02: 'erdia22/tomcat-apiproxy:1.4'} 
+  #   - { name01: 'erdia22/tomcat-board:1.4', name02: 'erdia22/tomcat-board:1.4'} 
+  #   - { name01: 'erdia22/tomcat-crm:1.4', name02: 'erdia22/tomcat-crm:1.4'} 
+
   - name: push an image
     docker_image:
-      name: "{{ item.name01 }}"
-      repository: "{{ item.name02 }}"
+      name: gitlab.dz-ebp.io:5050/jerry/bizcubx/crawler
+      repository: gitlab.dz-ebp.io:5050/jerry/bizcubx/crawler
+      tag: 1.5
       push: yes
       source: local
-    loop:
-    - { name01: 'erdia22/tomcat-apiproxy:1.4', name02: 'erdia22/tomcat-apiproxy:1.4'} 
-    - { name01: 'erdia22/tomcat-board:1.4', name02: 'erdia22/tomcat-board:1.4'} 
-    - { name01: 'erdia22/tomcat-crm:1.4', name02: 'erdia22/tomcat-crm:1.4'} 
+
+# tag 그대로인 경우 push 안 됨
