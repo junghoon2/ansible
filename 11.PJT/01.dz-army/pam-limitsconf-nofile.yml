@@ -1,0 +1,16 @@
+- hosts: dzarmys
+  become: yes
+  tasks:
+  - name: Add or modify nofile soft limit for the user elastic
+    community.general.pam_limits:
+      domain: elastic
+      limit_type: soft
+      limit_item: memlock
+      value: unlimited
+
+  - name: Add or modify nofile soft limit for the user elastic
+    community.general.pam_limits:
+      domain: elastic
+      limit_type: hard
+      limit_item: memlock
+      value: unlimited

@@ -1,0 +1,14 @@
+- hosts: dzarmys
+  become: yes
+  tasks:
+  - name: modify kernel
+    ansible.posix.sysctl:
+      name: vm.max_map_count
+      value: '262144'
+      state: present
+
+  # - name: modify kernel
+  #   ansible.posix.sysctl:
+  #     name: ulimit
+  #     value: '65536'
+  #     state: present
