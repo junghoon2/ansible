@@ -10,30 +10,47 @@
   #     tag: 1.4
   #     push: yes
   #     source: local
-  - name: Log into private registry and force re-authorization
-    docker_login:
-      registry: gitlab.dz-army.io:5050/jerry/dz-army
-      username: jerry
-      password: Diamanti1! 
+  # - name: Log into private registry and force re-authorization
+  #   docker_login:
+  #     registry: gitlab.dz-army.io:5050/jerry/dz-army
+  #     username: jerry
+  #     password: Diamanti1! 
 
   - name: pull an image
     docker_image:
       name: docker.io/bitnami/{{item}}
+      # name: docker.elastic.co/elasticsearch/{{item}}
+      # name: emqx/{{item}}
       source: pull
     loop:
-    - redis-sentinel:6.0.8-debian-10-r55
-    - redis:6.0.9-debian-10-r0
+    # - redis-sentinel:6.0.8-debian-10-r55
+    # - redis:6.0.9-debian-10-r0
+    # - elasticsearch:7.4.0
+    # - emqx:v4.1.1
+    - jmx-exporter:0.14.0-debian-10-r64
+    - kafka-exporter:1.2.0-debian-10-r277
+    - kafka:2.6.0-debian-10-r78
+    - zookeeper:3.6.2-debian-10-r58
 
   - name: tag & push an image
     docker_image:
       name: docker.io/bitnami/{{item}}
+      # name: docker.elastic.co/elasticsearch/{{item}}
+      # name: emqx/{{item}}
       repository: gitlab.dz-army.io:5050/jerry/dz-army/{{item}}
-      tag: latest
+      # tag: latest
       push: yes
       source: local
     loop:
-    - redis-sentinel:6.0.8-debian-10-r55
-    - redis:6.0.9-debian-10-r0
+    # - redis-sentinel:6.0.8-debian-10-r55
+    # - redis:6.0.9-debian-10-r0
+    # - elasticsearch:7.4.0
+    # - emqx:v4.1.1
+    - jmx-exporter:0.14.0-debian-10-r64
+    - kafka-exporter:1.2.0-debian-10-r277
+    - kafka:2.6.0-debian-10-r78
+    - zookeeper:3.6.2-debian-10-r58
+
     # - human
     # - financial
     # - crm

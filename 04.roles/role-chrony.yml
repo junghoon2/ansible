@@ -1,0 +1,11 @@
+- hosts: dzarmyms
+  become: yes
+  # gather_facts: no
+  roles:
+  - chrony
+
+- hosts: dzarmyes
+  become: yes
+  # gather_facts: no
+  roles:
+  - chrony
