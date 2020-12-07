@@ -18,7 +18,8 @@
 
   - name: pull an image
     docker_image:
-      name: docker.io/bitnami/{{item}}
+      # name: docker.io/bitnami/{{item}}
+      name: docker.io/{{item}}
       # name: docker.elastic.co/elasticsearch/{{item}}
       # name: emqx/{{item}}
       source: pull
@@ -27,14 +28,17 @@
     # - redis:6.0.9-debian-10-r0
     # - elasticsearch:7.4.0
     # - emqx:v4.1.1
-    - jmx-exporter:0.14.0-debian-10-r64
-    - kafka-exporter:1.2.0-debian-10-r277
-    - kafka:2.6.0-debian-10-r78
-    - zookeeper:3.6.2-debian-10-r58
+    # - jmx-exporter:0.14.0-debian-10-r64
+    # - kafka-exporter:1.2.0-debian-10-r277
+    # - kafka:2.6.0-debian-10-r78
+    # - zookeeper:3.6.2-debian-10-r58
+    - busybox:1.31.1
+    - grafana/grafana:7.2.1
 
   - name: tag & push an image
     docker_image:
-      name: docker.io/bitnami/{{item}}
+      # name: docker.io/bitnami/{{item}}
+      name: docker.io/{{item}}
       # name: docker.elastic.co/elasticsearch/{{item}}
       # name: emqx/{{item}}
       repository: gitlab.dz-army.io:5050/jerry/dz-army/{{item}}
@@ -46,11 +50,12 @@
     # - redis:6.0.9-debian-10-r0
     # - elasticsearch:7.4.0
     # - emqx:v4.1.1
-    - jmx-exporter:0.14.0-debian-10-r64
-    - kafka-exporter:1.2.0-debian-10-r277
-    - kafka:2.6.0-debian-10-r78
-    - zookeeper:3.6.2-debian-10-r58
-
+    # - jmx-exporter:0.14.0-debian-10-r64
+    # - kafka-exporter:1.2.0-debian-10-r277
+    # - kafka:2.6.0-debian-10-r78
+    # - zookeeper:3.6.2-debian-10-r58
+    - busybox:1.31.1
+    - grafana:7.2.1
     # - human
     # - financial
     # - crm
