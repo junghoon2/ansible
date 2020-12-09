@@ -1,4 +1,0 @@
-- name: install autocompletion pkgs
-  yum:
-    name: "bash-completion"
-    state: present 

@@ -1,7 +1,7 @@
 # Set ntp.conf, sync ntpdate, restart ntpd, check status
 - name: copy ntp.conf.j2 /etc/ntp.conf
   template:
-    src: ntp.conf.j2
+    src: ntp.j2
     dest: /etc/ntp.conf 
     owner: root
     group: root

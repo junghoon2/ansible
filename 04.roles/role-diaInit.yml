@@ -1,5 +1,5 @@
 ---
-- hosts: dia20s
+- hosts: dzclds
   become: yes
   user: diamanti
   roles:

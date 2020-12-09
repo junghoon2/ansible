@@ -19,7 +19,7 @@
   - name: pull an image
     docker_image:
       # name: docker.io/bitnami/{{item}}
-      name: docker.io/{{item}}
+      name: "{{item}}"
       # name: docker.elastic.co/elasticsearch/{{item}}
       # name: emqx/{{item}}
       source: pull
@@ -38,7 +38,7 @@
   - name: tag & push an image
     docker_image:
       # name: docker.io/bitnami/{{item}}
-      name: docker.io/{{item}}
+      name: "{{item}}"
       # name: docker.elastic.co/elasticsearch/{{item}}
       # name: emqx/{{item}}
       repository: gitlab.dz-army.io:5050/jerry/dz-army/{{item}}
@@ -55,7 +55,7 @@
     # - kafka:2.6.0-debian-10-r78
     # - zookeeper:3.6.2-debian-10-r58
     - busybox:1.31.1
-    - grafana:7.2.1
+    # - grafana:7.2.1
     # - human
     # - financial
     # - crm

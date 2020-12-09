@@ -5,10 +5,10 @@
   command: "ipmitool lan set 1 ipaddr {{ ipmi_ip }} "
 
 - name: Set netmask
-  command: "ipmitool lan set 1 netmask 255.255.255.0"
+  command: "ipmitool lan set 1 netmask {{ipmi_subnet}}"
 
 - name: Set default gateway
-  command: "ipmitool lan set 1 defgw ipaddr 172.16.50.1"
+  command: "ipmitool lan set 1 defgw ipaddr {{ipmi_gw }}"
 
 - name: Print IPMI ip addr
   command: "ipmitool lan print 1"

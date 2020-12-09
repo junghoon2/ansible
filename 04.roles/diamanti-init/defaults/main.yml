@@ -1,5 +1,11 @@
 ---
+#/etc/hosts ping chk
+peer: dzcld03
+
 # defaults file for diamanti-init
+ipmi_subnet: 255.255.255.0
+ipmi_gw: 10.61.0.1
+
 nameserver: 
   ns01: 14.41.60.10
   ns02: 14.41.60.11
@@ -15,5 +21,3 @@ ntpserver:
   # ntp03: 1.pool.ntp.org
 
 timezone: Asia/Seoul
-
-peer: dia203
