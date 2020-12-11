@@ -1,0 +1,19 @@
+# - hosts: dzarmyws
+#   become: yes
+#   tasks:
+#     - name: replace line 
+#       lineinfile:
+#         path: /etc/cloud/cloud.cfg
+#         regexp: "- update_etc_hosts"    # 172로 시작하는 line 변경 
+#         # line: "{{ ansible_hostname }}"    # line 전체를 변경한다.
+#         line: "#- update_etc_hosts"
+
+- hosts: dzarmyms
+  become: yes
+  tasks:
+    - name: replace line 
+      lineinfile:
+        path: /etc/cloud/cloud.cfg
+        regexp: "- update_etc_hosts"    # 172로 시작하는 line 변경 
+        # line: "{{ ansible_hostname }}"    # line 전체를 변경한다.
+        line: "#- update_etc_hosts"
