@@ -1,0 +1,7 @@
+---
+# nameserverIP
+nameserver: 
+  ns01: 14.41.60.10
+  ns02: 14.41.60.11
+
+# timezone: Asia/Seoul

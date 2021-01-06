@@ -1,0 +1,9 @@
+---
+# tasks file for vmInit
+
+# chrony 설정은 별도 role 파일 사용
+
+# - include_tasks: "hostname.yml"
+# - include_tasks: "nameserver.yml"
+- include_tasks: "yum.yml"
+- include_tasks: "reboot.yml"

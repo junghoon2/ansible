@@ -1,5 +1,5 @@
-- hosts: dzarmyms
+- hosts: dzgitlab
   become: yes
   # gather_facts: no
   roles:
-  - chrony
+  - 02.vmInit

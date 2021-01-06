@@ -1,0 +1,13 @@
+---
+# tasks file for diamanti-init
+
+- name: Set hostname
+  hostname:
+    name: "{{ inventory_hostname }}"
+
+- name: Cat hostname
+  command: hostname
+  register: result
+
+- debug:
+    var: result.stdout

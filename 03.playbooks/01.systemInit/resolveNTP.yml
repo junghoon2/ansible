@@ -1,0 +1,4 @@
+name: Install docker
+gather_facts: No
+hosts: dzgitlab
+tasks:
