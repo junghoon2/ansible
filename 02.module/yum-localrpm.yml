@@ -1,4 +1,4 @@
-- hosts: dzdias
+- hosts: dias
   become: yes
   tasks:
   - name: install local rpm files
@@ -10,7 +10,8 @@
     # - /home/diamanti/diamanti-mc-docker-core-3.0.0-162.x86_64.rpm
     # - /home/diamanti/diamanti-cx-docker-core-3.0.0-162.x86_64.rpm
     # - /home/diamanti/diamanti-cx-3.0.0-162.x86_64.rpm
-    - /home/diamanti/diamanti_centos7.6_update2-7.6.0-24.1.x86_64.rpm
-    - /home/diamanti/diamanti-cx-2.4.1-108.x86_64.rpm
-    - /home/diamanti/diamanti-cx-docker-core-2.4.1-108.x86_64.rpm
-    - /home/diamanti/diamanti-sdr-patch-1.0.0-1.x86_64.rpm
+    # - /home/diamanti/diamanti_centos7.6_update2-7.6.0-24.1.x86_64.rpm
+    # - /home/diamanti/diamanti-cx-2.4.1-108.x86_64.rpm
+    # - /home/diamanti/diamanti-cx-docker-core-2.4.1-108.x86_64.rpm
+    # - /home/diamanti/diamanti-sdr-patch-1.0.0-1.x86_64.rpm
+    - /home/diamanti/diamanti-spektra-3.0.1-200.x86_64.rpm

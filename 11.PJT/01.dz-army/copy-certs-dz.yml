@@ -1,0 +1,25 @@
+# - hosts: armyw1
+# - hosts: dzarmys
+- hosts: dzdias
+  become: yes
+  gather_facts: no
+  tasks:
+  # - file:
+  #     path: /etc/docker/certs.d/gitlab.dz-army.io:5050
+  #     # group: spkr
+  #     # mode: 0664
+  #     # recurse: yes
+  #     state: directory
+
+  # - name: copy rules to remote
+  #   copy:
+  #     src: /home/spkr/10.security/gitlab.dz-army.io.crt
+  #     dest: /etc/docker/certs.d/gitlab.dz-army.io:5050/gitlab.dz-army.io.crt
+  #     backup: yes
+  #     # owner: dba
+  #     # group: dba
+  - name: copy rules to remote
+    copy:
+      src: /home/spkr/10.security/gitlab.dz-ebp.io.crt
+      dest: /etc/docker/certs.d/gitlab.dz-ebp.io:5050/gitlab.dz-ebp.io.crt
+      backup: yes
