@@ -9,10 +9,11 @@
 #   command: "ping -c 1 www.google.com"
 #   register: result
 
-# - name: Chk docker.io
-#   get_url:
-#     url: https://hub.docker.com
-#     mode: '0440'
+- name: Chk docker.io
+  get_url:
+    url: https://hub.docker.com
+    deat: /tmp/docker.html
+    mode: '0440'
 
 # - debug:
 #     var: result.stdout
