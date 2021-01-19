@@ -1,4 +1,4 @@
-- hosts: cents
+- hosts: rkes
   become: yes
   tasks:
     - name: Change hostname from inventory hostname

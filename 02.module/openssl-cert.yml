@@ -1,0 +1,9 @@
+- hosts: gitlab
+  become: yes
+  tasks:
+  - name: Generate a Self Signed OpenSSL certificate
+    openssl_certificate:
+      path: /home/spkr/gitlab.dz.io.crt
+      privatekey_path: /home/spkr/gitlab.dz.io.key
+      csr_path: /home/spkr/gitlab.dz.io.key
+      provider: selfsigned

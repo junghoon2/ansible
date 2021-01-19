@@ -1,0 +1,13 @@
+- hosts: rancher
+  become: yes
+# 개별 firewall rule 삭제는 안되고
+# firewalld 삭제 후 재설치
+
+# 삭제 후 재설치해도 Rule이 그대로 있네.
+# loop 하면 될 듯
+  tasks:
+  - name: firewall Serivce stopped
+    service:
+      name: firewalld
+      state: stopped
+      enabled: no

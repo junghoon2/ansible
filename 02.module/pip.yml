@@ -1,6 +1,5 @@
-- hosts: dzdias
+- hosts: gitlab
   become: yes
-  user: diamanti
   tasks:
   - pip:
-      name: docker
+      name: pyOpenSSL

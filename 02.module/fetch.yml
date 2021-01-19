@@ -1,0 +1,9 @@
+- hosts: dzgitlab
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: Store file into /tmp/fetched/host.example.com/tmp/somefile
+    fetch:
+      src: /home/gitlab/config/ssl/gitlab.dz.io.crt
+      dest: /tmp/gitlab.dz.io.crt
+      flat: yes

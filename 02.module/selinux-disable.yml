@@ -1,0 +1,9 @@
+- hosts: rkes
+  become: yes
+  tasks:
+  - name: Disable SELinux
+    ansible.posix.selinux:
+      state: disabled
+
+  - name:  Reboot the machine with all defaults
+    reboot:

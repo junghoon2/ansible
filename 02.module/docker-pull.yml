@@ -1,6 +1,6 @@
 # - hosts: adzdias
-- hosts: localhost
-  # become: yes
+- hosts: dzgit1
+  become: yes
   # user: diamanti
   tasks:
   - name: pull an image
@@ -8,9 +8,23 @@
       name: "{{ item }}"
       source: pull
     loop:
-    - nkkim/mariadb-ssh:10.2.13
-
-  # - name: pull an image
-  #   community.general.docker_image:
-  #     name: pacur/centos-7
-  #     source: pull
+    # - quay.io/calico/kube-controllers:v3.16.5
+    # - quay.io/calico/node:v3.16.5
+    # - quay.io/calico/cni:v3.16.5
+    # - k8s.gcr.io/coredns:1.7.0
+    # - k8s.gcr.io/cpa/cluster-proportional-autoscaler-amd64:1.8.3
+    # - k8s.gcr.io/kube-apiserver:v1.19.6
+    # - k8s.gcr.io/kube-controller-manager:v1.19.6
+    # - k8s.gcr.io/kube-proxy:v1.19.6
+    # - k8s.gcr.io/kube-scheduler:v1.19.6
+    # - docker.io/library/nginx:1.19
+    # - k8s.gcr.io/dns/k8s-dns-node-cache:1.16.0
+    # - emqx/emqx
+    # - docker.elastic.co/elasticsearch/elasticsearch:7.4.0
+    # - docker.io/bitnami/redis:6.0.9-debian-10-r0
+    # - docker.io/bitnami/redis-sentinel:6.0.8-debian-10-r55
+    # - docker.io/bitnami/redis-exporter:1.12.1-debian-10-r11
+    # - openebs/node-disk-manager:1.0.1
+    # - openebs/node-disk-operator:1.0.1
+    # - openebs/provisioner-localpv:2.4.0
+    - k8s.gcr.io/metrics-server/metrics-server:v0.4.1 

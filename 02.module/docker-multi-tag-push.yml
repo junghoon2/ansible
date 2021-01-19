@@ -1,5 +1,5 @@
 # - hosts: adzdias
-- hosts: dzdia02
+- hosts: dzgit1
   become: yes
   # user: diamanti
   tasks:
@@ -13,35 +13,29 @@
 
   - name: tag & push an image
     docker_image:
-      name: docker.io/erdia22/tomcat-{{item}}
-      repository: gitlab.dz-ebp.io:5050/jerry/bizcubex/tomcat-{{item}}r
-      tag: 1.4
+      name: k8s.gcr.io/metrics-server/metrics-server:v0.4.1
+      repository: gitlab.dz-army.io:5050/jerry/dz-army/metrics-server:v0.4.1
       push: yes
       source: local
     loop:
-    # - human
-    # - financial
-    # - crm
-    # - messenger
-    # - event
-    # - eap
-    # - gw
-    # - mail
-    # - fax
-    # - board
-    # - apiproxy
-    # - proxymgw
-    # - webauthn
-    # - ladder
-    # - kiss
-    # - mailbox
-    # - usagestatisticchartui
-    # - sms
-    # - personal
-    # - logis
-    # - ea
-    # - proxypush
-    # - keep
-    - ecm-convert
-
+    # - kube-controllers:v3.16.5
+    # - node:v3.16.5
+    # - cni:v3.16.5
+    # - k8s.gcr.io/coredns:1.7.0
+    # - k8s.gcr.io/cpa/cluster-proportional-autoscaler-amd64:1.8.3
+    # - kube-apiserver:v1.19.6
+    # - kube-controller-manager:v1.19.6
+    # - kube-proxy:v1.19.6
+    # - kube-scheduler:v1.19.6
+    # - docker.io/library/nginx:1.19
+    # - k8s.gcr.io/dns/k8s-dns-node-cache:1.16.0
+    # - emqx/emqx:v4.1.1
+    # - docker.elastic.co/elasticsearch/elasticsearch:7.4.0
+    # - redis:6.0.9-debian-10-r0
+    # - redis-sentinel:6.0.8-debian-10-r55
+    # - redis-exporter:1.12.1-debian-10-r11
+    # - node-disk-manager:1.0.1
+    # - node-disk-operator:1.0.1
+    # - provisioner-localpv:2.4.0
+    - k8s.gcr.io/metrics-server/metrics-server:v0.4.1
 
