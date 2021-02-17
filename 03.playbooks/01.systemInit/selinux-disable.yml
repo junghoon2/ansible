@@ -1,4 +1,4 @@
-- hosts: ksps
+- hosts: dzvm1
   become: yes
   tasks:
   - name: Disable SELinux

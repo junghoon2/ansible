@@ -1,4 +1,4 @@
-- hosts: rkes
+- hosts: gitrunner
   become: yes
   tasks:
   - name: Disable SELinux

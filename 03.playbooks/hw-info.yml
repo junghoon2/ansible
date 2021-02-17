@@ -1,0 +1,12 @@
+- hosts: ksp1
+  become: true
+  tasks:
+  - name: HW info
+    vars:
+      msg: |
+        CPU: {{ ansible_processor }}
+        CPU Core: {{ ansible_processor_cores }}
+        RAM: {{ ansible_memtotal_mb }}
+        SWAP: {{ ansible_memory_mb.swap.total }}
+    debug:
+      msg: "{{ msg.split('\n') }}"

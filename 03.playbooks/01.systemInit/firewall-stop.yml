@@ -1,4 +1,4 @@
-- hosts: rancher
+- hosts: dzvm4
   become: yes
 # 개별 firewall rule 삭제는 안되고
 # firewalld 삭제 후 재설치

@@ -1,0 +1,12 @@
+- hosts: drone
+  become: yes
+  tasks:
+  - lineinfile: "dest=/etc/sudoers state=present regexp='^%wheel' line='%wheel ALL=(ALL) NOPASSWD: ALL'"
+
+    # - name: allow max number of opened files
+    #   lineinfile:
+    #     path:  /etc/security/limits.conf
+    #     line: "{{ item }}"
+    #   loop:
+    #   - "elasticsearch soft memlock unlimited"    # line 추가
+    #   - "elasticsearch hard memlock unlimited"

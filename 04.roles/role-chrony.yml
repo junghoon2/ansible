@@ -1,4 +1,4 @@
-- hosts: dzgitlab
+- hosts: dzvm4
   become: yes
   # gather_facts: no
   roles:

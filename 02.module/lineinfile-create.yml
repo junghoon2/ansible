@@ -1,10 +1,16 @@
-- hosts: cent8
+- hosts: ksps
   become: yes
   tasks:
-  - name: Insert ip address to file with lineinfile
+  # - name: Insert ip address to file with lineinfile
+  #   lineinfile:
+  #     path:  /var/www/html/index.html  # file이 없으면 만든다.
+  #     # create: yes
+  #     # # 변수를 사용하려면 {{ }} 사용
+  #     line: "vm.max_map_count = 262144"
+  
+  - name: Add insecure docker registry
     lineinfile:
-      path:  /var/www/html/index.html  # file이 없으면 만든다.
+      path:  /etc/docker/daemon.json  # file이 없으면 만든다.
       # create: yes
       # # 변수를 사용하려면 {{ }} 사용
       line: "vm.max_map_count = 262144"
-  

@@ -1,6 +1,6 @@
 ---
 - name: Start docker
-  hosts: gitrunner
+  hosts: drone
   become: yes
   tasks:
   - name: Install docker-compose

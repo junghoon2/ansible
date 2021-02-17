@@ -1,16 +1,16 @@
-- hosts: dzvms
+- hosts: ksps
   become: yes
   gather_facts: no
   tasks:
   - name: mkdir
     file:
-      path: /etc/docker/certs.d/gitlab.dz.io:5050
+      path: /etc/docker/certs.d/172.17.16.182:5050
       state: directory
 
   - name: copy crt file to remote
     copy:
-      src: /tmp/gitlab.dz.io.crt
-      dest: /etc/docker/certs.d/gitlab.dz.io:5050/gitlab.dz.io.crt
+      src: /home/spkr/172.17.16.182.crt
+      dest: /etc/docker/certs.d/172.17.16.182:5050/172.17.16.182.crt
       backup: yes
       # owner: dba
       # group: dba

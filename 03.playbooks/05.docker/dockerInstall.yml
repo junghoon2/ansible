@@ -1,14 +1,14 @@
 
 # $ sudo yum-config-manager \
-    # --add-repo \
-    # https://download.docker.com/linux/centos/docker-ce.repo
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
 
 # sudo yum install -y docker-ce-19.03.9 docker-ce-cli-19.03.9 containerd.io
 
 ---
 - name: Install docker
-  gather_facts: yes
-  hosts: gitlab
+  # gather_facts: yes
+  hosts: drone
   become: yes
   tasks:
   - name: Install yum utils

@@ -1,0 +1,43 @@
+---
+- hosts: drone
+  become: yes
+  tasks:
+    - name: install nfs-utils
+      yum: name=nfs-utils state=latest
+
+    - name: Create a mountable directory if it does not exist
+      file:
+        path: /mnt/nfs_test
+        state: directory
+        mode: '0775'
+
+    - name: enable rpcbind nfslock nfs
+      service:
+        name: "{{ item }}"
+        enabled: yes
+      with_items:
+        - rpcbind
+        - nfslock
+        - nfs
+
+    - name: Copy exports file.
+      template:
+        src: ./exports.j2
+        dest: /etc/exports
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: NFS apply change configrue
+      shell: systemctl reload nfs;exportfs -a
+
+    - name: allow firewall rule for nfs and nfs3
+    # 다른 port 막혀 있고 80 22 만 열려 있는 건 어떻게 확인하지? 
+      firewalld:
+        service: "{{ item }}"
+        state: enabled
+        permanent: yes   
+        immediate: yes
+      loop:
+      - nfs
+      - nfs3
