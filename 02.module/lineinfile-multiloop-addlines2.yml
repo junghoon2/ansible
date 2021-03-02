@@ -1,0 +1,23 @@
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: Add mirror options 
+    lineinfile:
+      path:  /etc/containerd/config.toml
+      regexp: 'endpoint = ["https://mirror.gcr.io","https://registry-1.docker.io"]'
+      line: 'endpoint = ["https://harbor.spk.io"]'
+
+  - name: Add containerd insecure options
+    lineinfile:
+      path:  /etc/containerd/config.toml
+      insertafter: 'endpoint = ["https://harbor.spk.io"]'  
+      line: "{{ item }}"
+    loop:
+    - '[plugins.cri.registry.configs."harbor.spk.io".tls]'
+    - '    insecure_skip_verify = true'  # indent 설정
+
+  - name: Add /etc/hosts
+    lineinfile:
+      path:  /etc/hosts
+      line: '172.17.29.154   harbor.spk.io'
+
