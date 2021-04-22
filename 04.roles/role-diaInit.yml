@@ -1,5 +1,5 @@
 ---
-- hosts: dzclds
+- hosts: teras
   become: yes
   user: diamanti
   roles:

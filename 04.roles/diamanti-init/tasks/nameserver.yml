@@ -5,14 +5,14 @@
     mode: 0644    # 644 하면 안되고 0644 해야 한다.
 
 # dz 외부로 못 나간다.
-# - name: Check dns and connection to outside
-#   command: "ping -c 1 www.google.com"
-#   register: result
+- name: Check dns and connection to outside
+  command: "ping -c 1 www.google.com"
+  register: result
 
-- name: Chk docker.io
-  get_url:
-    url: https://hub.docker.com
-    mode: '0440'
+# - name: Chk docker.io
+#   get_url:
+#     url: https://hub.docker.com
+#     mode: '0440'
 
 - debug:
     var: result.stdout
