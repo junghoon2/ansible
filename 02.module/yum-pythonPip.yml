@@ -1,4 +1,4 @@
-- hosts: dzgit1
+- hosts: gitlab
   become: yes
   tasks:
   - name: Install epel-release

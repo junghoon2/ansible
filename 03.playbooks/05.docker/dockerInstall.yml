@@ -1,27 +1,61 @@
+- gather_facts: false
+  hosts: gitlab
+  become: true
 
-# $ sudo yum-config-manager \
-    --add-repo \
-    https://download.docker.com/linux/centos/docker-ce.repo
-
-# sudo yum install -y docker-ce-19.03.9 docker-ce-cli-19.03.9 containerd.io
-
----
-- name: Install docker
-  # gather_facts: yes
-  hosts: drone
-  become: yes
   tasks:
+
+  - name: Remove docker if installed from CentOS repo
+    yum:
+        name: "{{ item }}"
+        state: removed
+
+    with_items:
+      - docker
+      - docker-client
+      - docker-client-latest
+      - docker-common
+      - docker-latest
+      - docker-latest-logrotate
+      - docker-logrotate
+      - docker-engine
+
   - name: Install yum utils
     yum:
-      name: yum-utils
+        name: "{{ item }}"
+        state: latest
+    with_items:
+          - yum-utils
+          - device-mapper-persistent-data
+          - lvm2
+
+  - name: Add Docker repo
+    get_url:
+        url: https://download.docker.com/linux/centos/docker-ce.repo
+        dest: /etc/yum.repos.d/docker-ce.repo
+
+  # - name: Enable Docker Edge & Test repo
+
+  #   #### Something it is missing here ####
+
+  - name: Install Docker
+    yum:
+      name: docker-ce
       state: latest
 
-  - name: Install device-mapper-persistent-data
-    yum:
-      name: device-mapper-persistent-data
-      state: latest
+  - name: Install docker-compose
+    get_url: 
+      url : "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-Linux-x86_64"
+      dest: /usr/local/bin/docker-compose
+      mode: 'u+x,g+x,o+x'
 
-  - name: Install lvm2
-    yum:
-      name: lvm2
-      state: latest
+  - name: Start Docker service
+    service:
+      name: docker
+      state: started
+      enabled: yes
+    
+  - name: Add user spkr to docker group
+    user:
+        name: spkr
+        groups: docker
+        append: yes

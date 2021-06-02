@@ -1,4 +1,4 @@
-- hosts: rkes
+- hosts: ctrs
   become: yes
   tasks:
     # - name: Add vm.max_map_count
@@ -14,7 +14,7 @@
     - name: Add /etc/hosts
       lineinfile:
         path:  /etc/hosts
-        line: "10.10.100.43     rancher.spkr.io"    # line 추가
+        line: "172.17.28.160     harbor.spk.io"    # line 추가
 
     # - name: allow max number of opened files
     #   lineinfile:
