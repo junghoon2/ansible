@@ -1,4 +1,4 @@
-- hosts: k8s
+- hosts: aws01
   become: yes
 # 개별 firewall rule 삭제는 안되고
 # firewalld 삭제 후 재설치
@@ -8,6 +8,7 @@
   tasks:
   - name: firewall Serivce stopped
     service:
-      name: firewalld
+      # name: firewalld
+      name: iptables  # aws ec2 instance
       state: stopped
       enabled: no

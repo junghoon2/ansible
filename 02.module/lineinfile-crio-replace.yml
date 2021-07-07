@@ -1,0 +1,15 @@
+- hosts: dias
+  become: yes
+
+  tasks:
+    - name: replace line with replace module
+      lineinfile:
+        path:  /etc/crio/crio.conf
+        regexp: "^#insecure_registries"    # 172로 시작하는 line 변경 
+        # line: "{{ ansible_hostname }}"    # line 전체를 변경한다.
+        line: 'insecure_registries = ["harbor.spk.io"]'
+
+    - name: Start and enable the crio service
+      systemd:
+        name: crio
+        state: restarted
